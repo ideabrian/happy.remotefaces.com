@@ -31,17 +31,11 @@ export const actions = {
 }
 
 export const getters = {
-    pivot(state){
-        if(state.room){
-            var editIndex = state.room.users.map(function(item) { return item.id; }).indexOf(state.auth.user.id);
-            if(editIndex >= 0){
-                return state.room.users[editIndex].pivot
-            }
-        }
-        else return null
+    deets(state){
+        return state.auth.user.deets[0]
     },
     isOwner(state, getters){
-        return getters.pivot && getters.pivot.role == 'owner'
+        return getters.deets && getters.deets.role == 'owner'
     },
     isLoggedIn(state) {
         return state.auth.loggedIn

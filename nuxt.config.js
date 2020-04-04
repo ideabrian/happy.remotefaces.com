@@ -1,3 +1,5 @@
+import { state } from './store'
+
 require('dotenv').config()
 export default {
   mode: 'spa',
@@ -103,7 +105,7 @@ export default {
       local: {
         endpoints: {
           login: { url: '/login', method: 'post', propertyName: 'token' },
-          user: { url: '/me', method: 'get', propertyName: false },
+          user: { url: ('/me/room'), method: 'get', propertyName: false },
           logout: false
         }
       }
