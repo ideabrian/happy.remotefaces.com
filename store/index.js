@@ -3,10 +3,14 @@ export const state = () => ({
     _token: null,
     toast: null,
     domain: null,
-    room: null
+    room: null,
+    confetti: false,
 })
 
 export const mutations = {
+    SET_CONFETTI: function (state, boolean) {
+        state.confetti = boolean        
+    },
     UPDATE_DOMAIN: function (state, domain) {
         state.domain = domain        
     },

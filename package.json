@@ -23,6 +23,7 @@
     "sass-loader": "^8.0.2",
     "v-credit-card": "^1.2.4",
     "v-tooltip": "^2.0.3",
+    "vue-confetti": "^2.0.8",
     "vue-cookie": "^1.1.4",
     "vue-markdown": "^2.2.4"
   },

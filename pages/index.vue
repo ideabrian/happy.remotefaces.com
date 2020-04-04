@@ -15,7 +15,7 @@
                 <template v-else>
                     <nuxt-link class="button" to="/join">Join Now</nuxt-link>
                     <br/>
-                    <nuxt-link to="/login" class="link block mt-8 lg:inline-block lg:mt-0">or login</nuxt-link>
+                    <nuxt-link to="/login" class="link block mt-1 lg:inline-block">or login</nuxt-link>
                 </template>                    
             </div>
         </header> 
@@ -75,6 +75,18 @@ export default {
             }
         },
         ...mapState(['room'])
+    },
+    methods: {
+        stopConfetti(){
+            this.$confetti.stop();
+        }
+    },
+    mounted(){
+        if(this.$store.state.confetti){
+            this.$confetti.start();
+            setTimeout(this.stopConfetti, 3000)
+            this.$store.commit('SET_CONFETTI', false)
+        }
     }
 }
 </script>

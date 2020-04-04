@@ -12,6 +12,7 @@ export default {
                     token: this.$route.params.token
                 },
             }).then((result) => {
+                this.$store.commit('SET_CONFETTI', true)
                 this.$router.push('/')
             })
         }
