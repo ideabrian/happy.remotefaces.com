@@ -1,0 +1,21 @@
+.pricing-block{
+    background: theme('colors.yellow.200');
+    border-radius: 6px;
+    padding: 1em 2em;
+    h2{
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    h3{
+        color: theme('colors.purple.default')
+    }
+    ul{
+        li{
+            span{
+                @apply block -mx-2 py-1 px-3 mb-4 leading-tight;
+                background: white;
+
+            }
+        }
+    }
+}

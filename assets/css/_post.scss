@@ -1,0 +1,23 @@
+.post{
+    margin-top: 4em;
+    .post-left{
+        img{
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            display: block;
+            margin: 0 auto .5em;
+        }             
+    }
+    i{
+        font-size: 0.9em;
+    }
+    .post-author{
+        font-weight: 600;
+        color: theme('colors.purple.default');
+        margin-bottom: .25em;           
+    }
+    // &:nth-child(2n){
+    //     background-color: theme('colors.yellow.200');
+    // }
+}

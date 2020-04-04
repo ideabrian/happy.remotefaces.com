@@ -1,0 +1,68 @@
+.field{
+    margin-top: .5em;
+}
+.label{
+    display: block;
+}
+.input, .textarea{
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: 4px;
+    background: theme('colors.purple.100');
+    color: theme('colors.purple.default');
+}
+.textarea{
+    padding: 1em;
+
+}
+.help{
+    display: block;
+    color: theme('colors.pink.default');
+}
+
+
+input::-webkit-input-placeholder {
+    color: theme('colors.purple.400');
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+    color: theme('colors.purple.400');  
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: theme('colors.purple.400');  
+}
+
+input:-ms-input-placeholder {
+    color: theme('colors.purple.400');  
+}
+
+input::placeholder {
+    color: theme('colors.purple.400');  
+}
+
+textarea::-webkit-input-placeholder {
+    color: theme('colors.purple.400');
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+    color: theme('colors.purple.400');  
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: theme('colors.purple.400');  
+}
+
+textarea:-ms-input-placeholder {
+    color: theme('colors.purple.400');  
+}
+
+textarea::placeholder {
+    color: theme('colors.purple.400');  
+}
+
+.vue-credit-card{
+    .cc-icon{
+        top: calc(50% - 4px);
+    }
+}

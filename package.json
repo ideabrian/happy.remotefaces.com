@@ -1,0 +1,32 @@
+{
+  "name": "RemoteFaces",
+  "version": "1.0.1",
+  "description": "Create. Together.",
+  "author": "Patrick Lorenzut",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@daily-co/daily-js": "^0.9.983",
+    "@nuxtjs/auth": "^4.8.5",
+    "@nuxtjs/axios": "^5.9.5",
+    "@nuxtjs/google-gtag": "^1.0.4",
+    "@nuxtjs/toast": "^3.3.0",
+    "dotenv": "^8.2.0",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "nuxt-validate": "^1.0.1",
+    "sass-loader": "^8.0.2",
+    "v-credit-card": "^1.2.4",
+    "v-tooltip": "^2.0.3",
+    "vue-cookie": "^1.1.4",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "1.2.0"
+  }
+}
