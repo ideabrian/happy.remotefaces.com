@@ -30,7 +30,6 @@ export default {
   },
   env: {
     appName: 'Create. Together.',
-    baseUrl: process.env.BASE_URL,
     baseApiUrl: process.env.API_BASE_URL,
     tokenName: 'satellizer_token',
     sessionName: 'member'
