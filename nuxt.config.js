@@ -54,7 +54,7 @@ export default {
     { src: '~/plugins/cookie.js'}, 
     { src: '~/plugins/confetti.js'},
     //{ src: '~/plugins/analytics.js', mode: 'client' }
-    // { src: '~/plugins/markdown.js', ssr: true }
+    { src: '~/plugins/markdown.js' }
   ],
   /*
   ** Nuxt.js dev-modules

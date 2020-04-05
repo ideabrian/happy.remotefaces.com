@@ -48,7 +48,8 @@
         username: '',
         password: '',
         user_id: 0,
-        isLoading: false
+        isLoading: false,
+        name: ''
       };
     },
     computed: {
@@ -69,9 +70,13 @@
     mounted(){
       if(this.room){
         this.$refs.email.focus()
+        setTimeout(this.setName(), 1500);
       }
     },
     methods: {
+      setName(){
+          this.name = 742
+      },
       async validateUsername(){        
         this.$validator.validate('username').then((result) => {                  
           if (result) {
@@ -85,7 +90,8 @@
           await this.$axios.post('/user/setUsername', {
             username: this.username,
             user_id: this.user_id,
-            room_id: this.room.id
+            room_id: this.room.id,
+            name: this.name
           }).then((result) => {
             this.isLoading = false 
             this.step = 3     
@@ -114,7 +120,8 @@
         try {            
           await this.$axios.post('/rooms/subscribe', {
             email: this.email,
-            room_id: this.room.id
+            room_id: this.room.id,
+            name: this.name
           }).then((result) => {
             this.isLoading = false 
             if(result.data && result.data.success){
@@ -130,48 +137,7 @@
           
         }
         
-      },
-      finishApplication(){
-        this.$validator.validateAll().then((result) => {                  
-          if (result) {
-            this.register()
-          }
-        })
-      },
-      async register() {
-        this.isLoading = true 
-        try {            
-            await this.$axios.post('/register', {
-              email: this.email,
-              username: this.username,
-              password: this.password
-            }).then((result) => {
-              if(result.data && result.data.user){
-                this.$auth.loginWith('local', {
-                    data: {
-                      email: this.email,
-                      password: this.password
-                    },
-                  }).then((result) => {
-                    this.$router.push('/')
-                })
-              }      
-            })
-        } catch (e) {
-            var error_message = 'Unable to register.'
-            if(e.response.data.email){
-              error_message = e.response.data.email
-            }
-            else if(e.response.data.username){
-              error_message = e.response.data.username
-            }
-            else if(e.response.data.password){
-              error_message = e.response.data.password
-            }
-            this.$toast.error(error_message)
-            this.isLoading = false
-        }
-      }
+      },      
     }
   }
   </script>

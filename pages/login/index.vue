@@ -33,7 +33,8 @@ import { mapState } from 'vuex'
             return {
                 email: '',
                 step: 1,
-                isLoading: false
+                isLoading: false,
+                name: ''
             };
         },
         head: {
@@ -43,9 +44,13 @@ import { mapState } from 'vuex'
         mounted(){
             if(this.room){
                 this.$refs.email.focus()
+                setTimeout(this.setName(), 1500);
             }
         },
         methods: {
+            setName(){
+                this.name = 742
+            },
             async validateEmail() {
                 this.$validator.validate('email').then((result) => {                  
                 if (result) {
@@ -58,7 +63,8 @@ import { mapState } from 'vuex'
                 try {
                     await this.$axios.post('/user/sendLoginLink', {
                         email: this.email,
-                        room_id: this.room.id
+                        room_id: this.room.id,
+                        name: this.name
                     }).then((result) => {  
                         this.step = 2
                     })             

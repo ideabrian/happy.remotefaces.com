@@ -28,7 +28,6 @@ export const actions = {
                 context.commit('UPDATE_ROOM', result.data)
             })
         } catch (e) {
-            //TODO show a 404 page
             $nuxt.$router.push('/404')
         }
     },

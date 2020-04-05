@@ -1,20 +1,22 @@
 <template>
-    <div class="max-w-md md:max-w-6xl mx-auto mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">                                                                                
-        <canvas ref="canvas"  width="480" height="320" class="hidden"></canvas>
-        <div class="col-span-1 relative" v-show="streaming">
-            <video class="rounded" ref="yourVideo" style="border-radius:6px" width="480" height="320"></video>
-            <div v-if="!$store.getters.isLoggedIn" class="absolute text-center left-0 right-0 bottom-0 text-white p-4 bg-purple" style="border-bottom-left-radius:6px;border-bottom-right-radius:6px">
-                <h3 class="mb-2">It works! Now... join the fun?</h3>
-                <nuxt-link to="/join" class="button is-small">Get Free Account</nuxt-link>
+    <div>
+        <div class="max-w-md md:max-w-6xl mx-auto mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">                                                                                
+            <canvas ref="canvas"  width="480" height="320" class="hidden"></canvas>
+            <div class="col-span-1 relative" v-show="streaming">
+                <video class="rounded" ref="yourVideo" style="border-radius:6px" width="480" height="320"></video>
+                <div v-if="!$store.getters.isLoggedIn" class="absolute text-center left-0 right-0 bottom-0 text-white p-4 bg-purple" style="border-bottom-left-radius:6px;border-bottom-right-radius:6px">
+                    <h3 class="mb-2">It works! Now... join the fun?</h3>
+                    <nuxt-link to="/join" class="button is-small">Join</nuxt-link>
+                </div>
             </div>
-        </div>
-        <button v-show="!streaming" ref="yourFace" class="col-span-1 relative bg-purple text-center rounded text-yellow cursor-pointer hover:bg-purple-800 content-center py-4" style="border-radius:6px" @click="startStream">
-            <span class="text-6xl leading-snug -mt-2 block">+</span>Click to Put<br/>Your Face Here
-        </button>
+            <button v-show="!streaming" ref="yourFace" class="col-span-1 relative bg-purple text-center rounded text-yellow cursor-pointer hover:bg-purple-800 content-center py-4" style="border-radius:6px" @click="startStream">
+                <span class="text-6xl leading-snug -mt-2 block">+</span>Click to Put<br/>Your Face Here
+            </button>
 
-        <RoomWorker :worker="worker" :room_id="room_id" v-for="worker in workers" :key="worker.username"/>
-        
-    </div>   
+            <RoomWorker :worker="worker" :room_id="room_id" v-for="worker in workers" :key="worker.username"/>
+            
+        </div>  
+    </div> 
 </template>
 <script>
 import RoomWorker from '~/components/RoomWorker.vue';

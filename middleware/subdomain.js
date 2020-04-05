@@ -13,7 +13,12 @@ export default function ({ store, redirect }) {
         }
 
         //face.com is used as localhost on dev machine with https://stackoverflow.com/questions/19016553/add-subdomain-to-localhost-url
-        if(host.includes(".remotefaces.com") || host.includes(".face.com")){
+        if(host.includes("localhost:")){
+            store.dispatch('updateDomain', 'localhost').then(response => {
+                //do nothing - a little trickery to force wait
+            })
+        }
+        else if(host.includes(".remotefaces.com") || host.includes(".face.com")){
             store.dispatch('updateDomain', host.split(".")[0]).then(response => {
                 //do nothing - a little trickery to force wait
             })

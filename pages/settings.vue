@@ -13,24 +13,25 @@
 
                     <div class="text-left mx-auto max-w-lg mt-10">
                         <div class="mt-10">
-                            <label>Room Name</label>
+                            <label><strong>Room Name</strong></label>
                             <input v-model="newRoom.name" class="input" type="text" name="name" v-validate="'required'" />
                             <span class="mt-1 help is-danger">{{ errors.first('name') }}</span>
                         </div>
                         <div class="mt-10">
-                            <label>Page Title</label>
+                            <label><strong>Page Title</strong></label>
                             <input v-model="newRoom.title" class="input" type="text" name="title" v-validate="'required'" />
                             <span class="mt-1 help is-danger">{{ errors.first('title') }}</span>
                         </div>
                         <div class="mt-10">
-                            <label>Page Subtitle</label>
+                            <label><strong>Page Subtitle</strong></label>
                             <input v-model="newRoom.subtitle" class="input" type="text" name="subtitle" v-validate="'required'" />
                             <span class="mt-1 help is-danger">{{ errors.first('subtitle') }}</span>
                         </div>
                         <div class="mt-10">
-                            <label>Copywriting</label>
+                            <label><strong>Sales Pitch</strong></label>
                             <textarea v-model="newRoom.pitch" class="textarea" name="pitch" v-validate="'required'"></textarea>
                             <span class="mt-1 help is-danger">{{ errors.first('pitch') }}</span>
+                            <p class="text-sm">This is only visible to non-logged-in viewers. It’s the compelling reason that somebody should join this room. Markdown supported.</p>
                         </div>
                         <div class="mt-10">
                             <button class="button is-small" @click.prevent="validateRoomSettings" :disabled="isLoading">Update Settings</button>
