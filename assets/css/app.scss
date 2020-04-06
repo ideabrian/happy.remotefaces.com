@@ -199,7 +199,7 @@ button:disabled, button[disabled]{
 		display: inline-block;
 		vertical-align: middle;
 		cursor: pointer;
-		margin-left: 1.5em;
+		margin-left: 1em;
 		.emoji{
 			font-size: 2em;
 			line-height: 4.2rem;
@@ -217,7 +217,6 @@ button:disabled, button[disabled]{
 	@media screen and (min-width: 1024px) and (max-width: 1279px){
 		height: 3em;
 		>span {
-			margin-left: 1em;
 			width: 3rem;
 			height: 3rem;
 			.emoji{

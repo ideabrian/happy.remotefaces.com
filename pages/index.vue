@@ -23,7 +23,7 @@
 
             <div v-if="$store.getters.isLoggedIn" class="max-w-lg mx-auto mb-16">
                 <form class="form relative">
-                    <input class="input" type="email" v-validate="'required|email'" name="email" v-model="status" placeholder="What are you working on?"/>                    
+                    <input class="input" type="text" v-validate="'required|max:15'" name="status" v-model="status" placeholder="What are you working on?" style="padding-right: 130px;"/>                    
                     <button class="button is-small newsletter-button" @click.prevent="updateStatus" native-type="submit">Update</button>
                 </form>
             </div>
