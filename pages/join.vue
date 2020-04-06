@@ -68,9 +68,9 @@
         }
     },
     mounted(){
+      setTimeout(this.setName(), 1500);
       if(this.room){
-        this.$refs.email.focus()
-        setTimeout(this.setName(), 1500);
+        this.$refs.email.focus()        
       }
     },
     methods: {
