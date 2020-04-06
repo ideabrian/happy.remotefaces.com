@@ -6,7 +6,7 @@
             
                 <h1 class="font-bold text-4xl sm:text-5xl md:text-5xl lg:text-5xl leading-none text-purple max-w-4xl mx-auto" v-html="room.title"></h1> 
 
-                <h2 class="mt-6 text-2xl mx-auto max-w-4xl" v-html="room.subtitle"></h2>
+                <h2 class="mt-6 text-2xl mx-auto max-w-3xl" v-html="room.subtitle"></h2>
                 <template v-if="$store.getters.isLoggedIn">
                     
                 </template>
