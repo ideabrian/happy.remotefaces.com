@@ -118,7 +118,13 @@ button:disabled, button[disabled]{
 	&.online{
 		filter: none;
 	}
+	.worker-username{
+		background: theme('colors.yellow.default');
+		background: rgba(#f7d89e, 0.7);
+	}
 	.worker-status{
+		background: theme('colors.yellow.default');
+		background: rgba(#f7d89e, 0.7);
 		left: 8px;
 		bottom: 8px;
 		right: auto;

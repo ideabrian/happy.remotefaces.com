@@ -2,11 +2,11 @@
     <div class="col-span-1 relative worker" :class="{'online' : isOnline}">
         <img :src="image" :alt="worker.username" class="rounded" width="480" height="320"/>                     
         
-        <span class="absolute right-0 top-0 py-2 px-2 text-center"><span class="bg-yellow py-1 px-2">{{ worker.username }}</span></span>
+        <span class="absolute right-0 top-0 py-2 px-2 text-center"><span class="py-1 px-2 worker-username">{{ worker.username }}</span></span>
         
         <span class="absolute online-dot" v-if="isOnline"></span>
         <span class="absolute online-status" v-else>{{ ago }} ago</span>
-        <div class="worker-status py-2 bg-yellow px-3 text-sm absolute inline-block" v-html="worker.status" v-if="worker.status"></div>
+        <div class="worker-status py-2 px-3 text-sm absolute inline-block" v-html="worker.status" v-if="worker.status"></div>
     </div>    
 </template>
 <script>
