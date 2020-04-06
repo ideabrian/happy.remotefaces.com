@@ -65,9 +65,10 @@ export default {
             this.$confetti.stop();
         },
         startConfetti(){
-            this.$confetti.start();
             if(this.$store.state.confetti){
-                this.$confetti.start();
+                this.$confetti.start({
+                    defaultDropRate: 15
+                });
                 setTimeout(this.stopConfetti, 3000)
                 this.$store.commit('SET_CONFETTI', false)
             }
