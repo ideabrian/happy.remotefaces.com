@@ -19,7 +19,15 @@
         </header> 
 
 
-        <section class="mx-auto -mt-16 mb-32 text-center container">                            
+        <section class="mx-auto -mt-16 mb-32 text-center container"> 
+
+            <div v-if="$store.getters.isLoggedIn" class="max-w-lg mx-auto mb-16">
+                <form class="form relative">
+                    <input class="input" type="email" v-validate="'required|email'" name="email" v-model="status" placeholder="What are you working on?"/>                    
+                    <button class="button is-small newsletter-button" @click.prevent="updateStatus" native-type="submit">Update</button>
+                </form>
+            </div>
+
             <RoomWorkers ref="roomWorkersCom" :room_id="room.id"/>                     
         </section>
 
@@ -41,6 +49,11 @@ import RoomWorkers from '~/components/RoomWorkers.vue'
 import Nav from '~/components/Nav.vue'
 import { mapState } from 'vuex'
 export default {     
+    data: function(){
+        return{
+            status: ''
+        }
+    },
     head () {
         return {
             title: this.title,
@@ -72,6 +85,16 @@ export default {
                 setTimeout(this.stopConfetti, 3000)
                 this.$store.commit('SET_CONFETTI', false)
             }
+        },
+        updateStatus(){
+            this.$axios.post('/updateStatus',{
+                status: this.status
+            }).then((result) => {
+                if(result && result.data){
+                    this.status = ''
+                    this.$toast.success('Status Updated')
+                }
+            })
         }
     },
     mounted(){
