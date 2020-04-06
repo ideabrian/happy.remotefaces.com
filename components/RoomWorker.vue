@@ -6,7 +6,7 @@
         
         <span class="absolute online-dot" v-if="isOnline"></span>
         <!-- <span class="absolute online-status" v-else>{{ ago }} ago</span> -->
-        <div class="worker-status py-2 bg-yellow px-3 text-sm absolute bottom-0 left-0 right-0" v-html="worker.status" v-if="isOnline && worker.status"></div>
+        <div class="worker-status py-2 bg-yellow px-3 text-sm absolute inline-block" v-html="worker.status" v-if="worker.status"></div>
     </div>    
 </template>
 <script>

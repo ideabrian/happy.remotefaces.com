@@ -119,17 +119,12 @@ button:disabled, button[disabled]{
 		filter: none;
 	}
 	.worker-status{
-		height: 2.2rem;
-		overflow: hidden;
-		line-height: 2.25rem;
-		padding-top: 0;
-	}
-	&:hover{
-		.worker-status{
-			height: auto;
-			line-height: 1.25rem;
-			padding-top: .5rem;
-		}
+		left: 8px;
+		bottom: 8px;
+		right: auto;
+		text-align: left;
+		line-height: 1.2em;
+		max-width: 70%;
 	}
 
 	@media screen and (min-width: 520px){
