@@ -66,7 +66,6 @@ export default {
         }
     },
     mounted(){
-        this.$confetti.start();
         if(this.$store.state.confetti){
             this.$confetti.start();
             setTimeout(this.stopConfetti, 3000)
