@@ -3,6 +3,12 @@
         <img :src="image" :alt="worker.username" class="rounded" width="480" height="320"/>                     
         
         <span class="absolute right-0 top-0 py-2 px-2 text-center"><span class="py-1 px-2 worker-username">{{ worker.username }}</span></span>
+
+        <span class="worker-actions">
+            <span v-tooltip="'Laugh at this GIF.'"><span class="emoji">🤣</span></span>
+            <span v-tooltip="'Drop ' + worker.username + ' a message.'"><i class="fa fa-microphone"></i></span>
+            <span v-tooltip="'Creep on ' + worker.username + '.'"><i class="fa fa-eye"></i></span>
+        </span>
         
         <span class="absolute online-dot" v-if="isOnline"></span>
         <span class="absolute online-status" v-else>{{ ago }} ago</span>
