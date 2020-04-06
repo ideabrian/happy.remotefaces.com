@@ -101,6 +101,7 @@ button:disabled, button[disabled]{
 
 .worker{	
 	filter: grayscale(100%);
+	
 	.online-status{
 		left:10px;
 		top:10px;
@@ -129,6 +130,38 @@ button:disabled, button[disabled]{
 			line-height: 1.25rem;
 			padding-top: .5rem;
 		}
+	}
+
+	@media screen and (min-width: 520px){
+		img{
+			width: 448px;
+			height: 299px;
+		}
+	}
+	@media screen and (min-width: 768px){
+		img{
+			width: 340px;
+			height: 227px;
+		}
+	}
+	@media screen and (min-width: 1024px){
+		img{
+			width: 304px;
+			height: 203px;
+		}
+	}
+	@media screen and (min-width: 1280px){
+		img{
+			width: 368px;
+			height: 245px;
+		}
+	}
+}
+
+#confetti-canvas{
+	@media screen and (max-width: 519px){
+		display: none!important;
+		
 	}
 }
 
