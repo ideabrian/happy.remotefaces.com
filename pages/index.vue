@@ -91,7 +91,8 @@ export default {
                 status: this.status
             }).then((result) => {
                 if(result && result.data){
-                    this.status = ''
+                    this.$refs.roomWorkersCom.updateUserStatus(this.status)
+                    this.status = ''                    
                     this.$toast.success('Status Updated')
                 }
             })

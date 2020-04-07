@@ -32,7 +32,10 @@ export default {
     components: {
         RoomWorker
     },
-    methods: {        
+    methods: {   
+        async updateUserStatus(status){
+            this.workers[0].status = status //because i'll always be first
+        },
         async uploadPicture(still, gif){
             this.photosTaken = this.photosTaken + 1
             this.$axios.post('/updateImage',{
