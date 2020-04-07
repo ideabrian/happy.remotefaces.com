@@ -6,14 +6,16 @@
         <section class="max-w-md mx-auto bg-white p-8">      
 
             <div v-show="step == 1" class="mt-40">
-                <div class="field">
-                    <label class="label mt-10 mb-2 text-sm">What’s Your Email Address?</label>
-                    <input v-model="email" v-validate="'required|email'" spellcheck="false" type="email" name="email" ref="email" id="email" placeholder="alex@doe.com" class="input">                  
-                    <span class="help is-danger">{{ errors.first('email') }}</span>
-                </div>
-                <div class="field" v-if="email">
-                    <button class="button is-small mt-4" v-on:click.prevent="validateEmail()" :disabled="isLoading">log in</button>
-                </div>             
+                <form>
+                    <div class="field">
+                        <label class="label mt-10 mb-2 text-sm">What’s Your Email Address?</label>
+                        <input v-model="email" v-validate="'required|email'" spellcheck="false" type="email" name="email" ref="email" id="email" placeholder="alex@doe.com" class="input">                  
+                        <span class="help is-danger">{{ errors.first('email') }}</span>
+                    </div>
+                    <div class="field" v-if="email">
+                        <button class="button is-small mt-4" native-type="submit" v-on:click.prevent="validateEmail()" :disabled="isLoading">log in</button>
+                    </div>     
+                </form>        
             </div>       
             <div v-show="step == 2" class="mt-40">
                 A login link has been sent to your email address.

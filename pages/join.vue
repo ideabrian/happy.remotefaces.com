@@ -6,27 +6,30 @@
     <section  class="max-w-md mx-auto bg-white p-8">      
 
       <div v-show="step == 1" class="mt-40">      
-        
-        <div class="field">
-          <label class="label mt-10 mb-2 text-sm">What’s Your Email Address?</label>
-          <input class="input" type="email" ref="email" v-model="email" name="email" v-validate="'required|email'" placeholder="alex@doe.com"/>
-          <span class="mt-1 help is-danger">{{ errors.first('email') }}</span>
-        </div>
-        
-        <div class="field" v-if="email">
-          <button class="button is-small mt-2" @click.prevent="validateEmail" :disabled="isLoading">Submit</button>
-        </div>      
+        <form>
+          <div class="field">
+            <label class="label mt-10 mb-2 text-sm">What’s Your Email Address?</label>
+            <input class="input" type="email" ref="email" v-model="email" name="email" v-validate="'required|email'" placeholder="alex@doe.com"/>
+            <span class="mt-1 help is-danger">{{ errors.first('email') }}</span>
+          </div>
+          
+          <div class="field" v-if="email">
+            <button class="button is-small mt-2" @click.prevent="validateEmail" native-type="submit" :disabled="isLoading">Submit</button>
+          </div>     
+        </form> 
       </div>
       <div v-show="step == 2" class="mt-40">
-        <div class="field">
-          <label class="label mt-10 mb-2 text-sm">Please Choose a Username</label>
-          <input class="input" type="text" v-model="username" name="username" v-validate="'required|alpha_dash|max:15'" placeholder="groovysauce"/>
-          <span class="mt-1 help is-danger">{{ errors.first('username') }}</span>                
-        </div> 
+        <form>
+          <div class="field">
+            <label class="label mt-10 mb-2 text-sm">Please Choose a Username</label>
+            <input class="input" type="text" v-model="username" name="username" v-validate="'required|alpha_dash|max:15'" placeholder="groovysauce"/>
+            <span class="mt-1 help is-danger">{{ errors.first('username') }}</span>                
+          </div> 
 
-        <div class="field" v-if="username">
-          <button class="button is-small mt-2" @click.prevent="validateUsername" :disabled="isLoading">Submit</button>
-        </div>
+          <div class="field" v-if="username">
+            <button class="button is-small mt-2" native-type="submit" @click.prevent="validateUsername" :disabled="isLoading">Submit</button>
+          </div>
+        </form>
       </div>
       <div v-show="step == 3" class="mt-40">
         Thanks for signing up! A login link has been sent to your email address!
