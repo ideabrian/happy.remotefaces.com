@@ -1,22 +1,5 @@
-# Remote Faces
+This the application website located at https://happy.remotefaces.com
 
-> Create. Together.
+For the marketing website go here: https://github.com/patricklorenzut/remotefaces.com 
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For the backend website, go here: https://github.com/patricklorenzut/bananas.remotefaces.com
