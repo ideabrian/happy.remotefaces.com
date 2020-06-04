@@ -1,4 +1,4 @@
-This the application website located at https://happy.remotefaces.com
+This the application website located at \[subdomain\].remotefaces.com, eg https://demo.remotefaces.com/
 
 For the marketing website go here: https://github.com/patricklorenzut/remotefaces.com 
 
